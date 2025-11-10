@@ -5,11 +5,19 @@ function [mu] = exercicio3(t, NC)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% digite seu codigo aqui
+% Linearização
+ln_NC = log(NC);
 
+% Ajuste de Regressão Linear
+% Polyfit encontra os coeficientes.
+% p = [coeficiente_angular, coeficiente_linear]
+p = polyfit(t, ln_NC, 1);
 
-% mantenha essas duas linhas finais, subtituindo mu pelo valor que você calculou
-mu = 0;
+% Mu: O coeficiente angular 
+%    mu: taxa de crescimento específica na equação linearizada
+mu = p(1);
+
+% mantenha essas duas linhas finais, substituindo mu pelo valor que você calculou
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
